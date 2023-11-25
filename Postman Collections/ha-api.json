@@ -1,0 +1,539 @@
+{
+	"info": {
+		"_postman_id": "557d6241-497a-424a-ae97-daafb0272a0d",
+		"name": "Home Assistant",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "config",
+			"item": [
+				{
+					"name": "config",
+					"id": "23a713b2-477c-48aa-9930-5bd39c4c7861",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{protocol}}{{url}}:{{port}}/api/config"
+					},
+					"response": []
+				},
+				{
+					"name": "check config",
+					"id": "747d0d66-d06b-48c2-9cec-8c6234bc8c6f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{protocol}}{{url}}:{{port}}/api/config/core/check_config"
+					},
+					"response": []
+				}
+			],
+			"id": "79230907-0697-4dc2-a9cc-dc9f998297a9"
+		},
+		{
+			"name": "events",
+			"item": [
+				{
+					"name": "event with Id",
+					"item": [
+						{
+							"name": "POST event with ID",
+							"id": "97349e1f-f98e-46a5-ac3b-b1321a21d268",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": "{{protocol}}{{url}}:{{port}}/api/events/{{event_type}}"
+							},
+							"response": []
+						}
+					],
+					"id": "723d326b-ddcd-4c11-a96c-e8f9df5d78cc"
+				},
+				{
+					"name": "GET",
+					"id": "ccbd5caf-e5d8-46f1-93c6-869c18dfbfbe",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{protocol}}{{url}}:{{port}}/api/events"
+					},
+					"response": []
+				}
+			],
+			"id": "3d5039f3-c68f-4149-bacf-15dd0e2a2594"
+		},
+		{
+			"name": "services",
+			"item": [
+				{
+					"name": "GET",
+					"id": "a3ff4469-22b0-4dd0-a22c-c22d9a6a8c9d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{protocol}}{{url}}:{{port}}/api/services"
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"id": "daa24198-f361-4daa-b227-895ddad97f65",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"entity_id\": \"domain.entity\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{protocol}}{{url}}:{{port}}/api/services/{{domain}}/{{service}}"
+					},
+					"response": []
+				}
+			],
+			"id": "ddb5bcc2-58f1-4c86-a6b7-3cfe9435364b"
+		},
+		{
+			"name": "history",
+			"item": [
+				{
+					"name": "GET",
+					"id": "1719c0cd-9634-472b-8d23-ca11a01e2ef1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{url}}:{{port}}/api/history/period?filter_entity_id={{entity_id}}&timestamp={{timestamp}}",
+							"host": [
+								"{{protocol}}{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"history",
+								"period"
+							],
+							"query": [
+								{
+									"key": "filter_entity_id",
+									"value": "{{entity_id}}"
+								},
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}"
+								},
+								{
+									"key": "end_time",
+									"value": "{{end_time}}",
+									"disabled": true
+								},
+								{
+									"key": "minimal_response",
+									"value": "{{minimal_response}}",
+									"disabled": true
+								},
+								{
+									"key": "no_attributes",
+									"value": "{{no_attributes}}",
+									"disabled": true
+								},
+								{
+									"key": "significant_changes_only",
+									"value": "{{significant_changes_only}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "37d5c408-bc9a-44f6-87fc-0081a5076602"
+		},
+		{
+			"name": "logbook",
+			"item": [
+				{
+					"name": "GET",
+					"id": "24d58038-7f5f-49fd-9ce9-bb57e461c6fa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{url}}:{{port}}/api/logbook?timestamp={{timestamp}}",
+							"host": [
+								"{{protocol}}{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"logbook"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}"
+								},
+								{
+									"key": "entity",
+									"value": "{{entity_id}}",
+									"disabled": true
+								},
+								{
+									"key": "end_time",
+									"value": "{{end_time}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "aa2890b2-2ee9-42db-81de-5fb6372a076d"
+		},
+		{
+			"name": "states",
+			"item": [
+				{
+					"name": "state with ID",
+					"item": [
+						{
+							"name": "GET by ID",
+							"id": "fe897590-d6f6-478e-84b8-137c48b63889",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{protocol}}{{url}}:{{port}}/api/states/{{entity_id}}"
+							},
+							"response": []
+						},
+						{
+							"name": "POST",
+							"id": "0f4ab13b-c9c4-426a-a229-571709db78da",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"state\": \"string\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{protocol}}{{url}}:{{port}}/api/states/{{entity_id}}"
+							},
+							"response": []
+						}
+					],
+					"id": "5e06e1ae-58b2-4b0e-bff1-f7e949b9dcf0"
+				},
+				{
+					"name": "GET",
+					"id": "8c4760b5-ee3f-4f49-907c-cee8f45316a5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{protocol}}{{url}}:{{port}}/api/states"
+					},
+					"response": []
+				}
+			],
+			"id": "f90df999-bfd0-4471-86dc-15d34fbc5c3c"
+		},
+		{
+			"name": "error log",
+			"item": [
+				{
+					"name": "GET",
+					"id": "d103ebde-5215-4640-980c-c956e64ecd4e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{protocol}}{{url}}:{{port}}/api/error_log"
+					},
+					"response": []
+				}
+			],
+			"id": "56a6ef91-8e8e-4dbc-b149-317475ead01a"
+		},
+		{
+			"name": "camera proxy",
+			"item": [
+				{
+					"name": "GET",
+					"id": "f32d3bd2-6cc2-4a03-a6d4-a16ae7fd10f2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{protocol}}{{url}}:{{port}}/api/camera_proxy/{{cam_entity_id}}"
+					},
+					"response": []
+				}
+			],
+			"id": "d98e577f-fca7-4559-bfe0-72e02ba52c66"
+		},
+		{
+			"name": "calendars",
+			"item": [
+				{
+					"name": "calendar with ID",
+					"item": [
+						{
+							"name": "GET",
+							"id": "adac85ce-9e5f-40b7-ab26-092143fb4161",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{url}}:{{port}}/api/calendars/{{calendar_id}}?start={{start_time}}&end={{end_time}}",
+									"host": [
+										"{{protocol}}{{url}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"calendars",
+										"{{calendar_id}}"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "{{start_time}}"
+										},
+										{
+											"key": "end",
+											"value": "{{end_time}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "4500b042-150d-426c-84cc-689f5357392c"
+				},
+				{
+					"name": "GET",
+					"id": "1abf63c9-c90b-425e-a2de-fa0105d26949",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{protocol}}{{url}}:{{port}}/api/calendars"
+					},
+					"response": []
+				}
+			],
+			"id": "b94f4fce-bf15-401e-8dc6-b913f2484e2f"
+		},
+		{
+			"name": "template",
+			"item": [
+				{
+					"name": "POST render template",
+					"id": "5bea579a-0205-4c39-8a3d-0839dc99ec75",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"template\": \"entity is {{ states('domain.entity') }}!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{protocol}}{{url}}:{{port}}/api/template"
+					},
+					"response": []
+				}
+			],
+			"id": "c97752bb-b2c1-4736-9405-36bbe25e23c1"
+		},
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "GET",
+					"id": "d428e9f7-ab38-481e-96b0-de3a5791aa00",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{protocol}}{{url}}:{{port}}/api/"
+					},
+					"response": []
+				}
+			],
+			"id": "c3fc1332-c603-4864-9b4e-6f2fec1ea603"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{token}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b22edc44-aa6a-4928-9fb6-bd9fa4a7f33a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "384c0cbd-7605-42a0-88bd-4daacd03290b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "protocol",
+			"value": "http:// or https://",
+			"type": "string"
+		},
+		{
+			"key": "url",
+			"value": "HA FQDN or IP",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "HA Port number",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "long_lived_token",
+			"type": "string"
+		},
+		{
+			"key": "entity_id",
+			"value": "domain.entity",
+			"type": "string"
+		},
+		{
+			"key": "timestamp",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "start_time",
+			"value": "YYYY-MM-DDTHH:MM:SS.000Z",
+			"type": "string"
+		},
+		{
+			"key": "end_time",
+			"value": "YYYY-MM-DDTHH:MM:SS.000Z",
+			"type": "string"
+		},
+		{
+			"key": "cam_entity_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "calendar_id",
+			"value": "domain.entity",
+			"type": "string"
+		},
+		{
+			"key": "event_type",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "domain",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "service",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "minimal_response",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "no_attributes",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "significant_changes_only",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
