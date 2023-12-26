@@ -272,6 +272,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
 						"method": "GET",
 						"header": [],
 						"url": "{{protocol}}{{url}}:{{port}}/api/states"
@@ -436,7 +442,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b22edc44-aa6a-4928-9fb6-bd9fa4a7f33a",
+				"id": "3879c41e-afac-40b0-8cb7-0c6636e778cc",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -446,7 +452,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "384c0cbd-7605-42a0-88bd-4daacd03290b",
+				"id": "2a117c92-6d2a-4d27-a306-d9f94e0e070c",
 				"type": "text/javascript",
 				"exec": [
 					""
