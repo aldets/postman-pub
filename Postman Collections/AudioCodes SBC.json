@@ -1,0 +1,805 @@
+{
+	"info": {
+		"_postman_id": "45bf7ed4-cc4e-41db-bd37-d306b13da088",
+		"name": "AudioCodes SBC",
+		"description": "Add the proper values under variables and you are good to go:  \nprotocol: Currently it is http://, but you can change it to https://  \nhost: IP address or FQDN for the SBC  \nuid & pwd: Add the username and password for an account from the SBC with which you want to make the API calls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9823052"
+	},
+	"item": [
+		{
+			"name": "actions",
+			"item": [
+				{
+					"name": "actions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/actions",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"actions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"saveConfiguration\": true,\r\n    \"gracefulTimeout\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/actions/reset",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"actions",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveConfiguration",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-length": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Length",
+								"value": "0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"saveConfiguration\": true,\r\n    \"gracefulTimeout\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/actions/saveConfiguration",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"actions",
+								"saveConfiguration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authToken",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Length",
+								"value": "0",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"saveConfiguration\": true,\r\n    \"gracefulTimeout\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/actions/authToken",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"actions",
+								"authToken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "alarms",
+			"item": [
+				{
+					"name": "alarms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/alarms",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"alarms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "active",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/alarms/active",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"alarms",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/alarms/history",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"alarms",
+								"history"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "files",
+			"item": [
+				{
+					"name": "files",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/files",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "amd",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/files/amd",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"amd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "casTable",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/files/casTable",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"casTable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cliScript",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/files/cliScript",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"cliScript"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "configurationPackage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/files/configurationPackage",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"configurationPackage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cpt",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/files/cpt",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"cpt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "debugFile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/files/debugFile",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"debugFile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "debugFileRedundant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/files/debugFileRedundant",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"debugFileRedundant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dialplan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/files/dialplan",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"dialplan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ini",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/files/ini",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"ini"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "prt",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/files/prt",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"prt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sbcWizard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/files/sbcWizard",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"sbcWizard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "software",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/files/software",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"software"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tls",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/files/tls/1/certificate",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"tls",
+								"1",
+								"certificate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "license",
+			"item": [
+				{
+					"name": "license",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/license",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"license"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "kpi",
+			"item": [
+				{
+					"name": "kpi",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/kpi",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kpi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "current",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/kpi/current",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kpi",
+								"current"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/kpi/history",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kpi",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "interval",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/kpi/interval",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kpi",
+								"interval"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "status",
+			"item": [
+				{
+					"name": "status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/status",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sipTestCall",
+			"item": [
+				{
+					"name": "sipTestCall",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/sipTestCall",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sipTestCall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "drop",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/sipTestCall/drop",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sipTestCall",
+								"drop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/sipTestCall/getStatus",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sipTestCall",
+								"getStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dial",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/sipTestCall/dial",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sipTestCall",
+								"dial"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{host}}/api/v1/sipTestCall/show",
+							"host": [
+								"{{protocol}}{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sipTestCall",
+								"show"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "versions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}{{host}}/api/v1/versions",
+					"host": [
+						"{{protocol}}{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"versions"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{pwd}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{uid}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "protocol",
+			"value": "http://",
+			"type": "string"
+		},
+		{
+			"key": "host",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "uid",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "pwd",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
